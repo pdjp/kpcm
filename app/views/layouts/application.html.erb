@@ -8,9 +8,58 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
   </head>
 
   <body>
+  <header>
+      <div class="header-logo">
+        <i class="fas fa-tshirt"></i>
+        <%= link_to("CM", "/") %>
+      </div>
+      <ul class="header-menus">
+      <% if session[:user_id] %>
+        <li>
+        <%= link_to("Jackets","/jackets/index") %>
+        </li>
+        <li>
+        <%= link_to("Sweatshirts","/sweatshirts/index") %>
+        </li>
+        <li>
+        <%= link_to("T-shirts","/t_shirts/index") %>
+        </li>
+        <li>
+        <%= link_to("Pants","/pants/index") %>
+        </li>
+        <li>
+        <%= link_to("Shoes","/shoes/index") %>
+        </li>
+        <li>
+        <%= link_to("ログアウト", "/logout", {method: :post}) %>
+        </li>
+        <% else %>
+        <li>
+        <%= link_to("CMとは", "/about") %>
+        </li>
+        <li>
+        <%= link_to("ログイン", "/login") %>
+        </li>
+        <%
+=begin%>
+ <li>
+          <%= link_to("投稿一覧", "/posts/index") %>
+        </li> 
+<%
+=end%>
+      <% end %>
+      </ul>
+    </header>
+
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
