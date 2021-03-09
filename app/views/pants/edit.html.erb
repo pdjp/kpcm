@@ -1,0 +1,23 @@
+<div class="main pants-new">
+  <div class="container">
+    <h1 class="form-heading">編集する</h1>
+    <%= form_tag("/pants/#{@pant.id}/update",{multipart: true}) do %>
+    <div class="form">
+      <div class="form-body">
+        <% @pant.errors.full_messages.each do |message| %>
+            <div class="form-error">
+              <%= message %>
+            </div>
+          <% end %>
+        <p>ブランドの変更</p>
+        <textarea name="content"><%= @pant.content %></textarea>
+        <p>色の変更</p>
+        <textarea name="color"><%= @pant.color %></textarea>
+        <p>サイズの変更</p>
+        <textarea name="size"><%= @pant.size %></textarea>
+        <input type="submit" value="保存">
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

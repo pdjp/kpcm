@@ -1,0 +1,138 @@
+// Place all the styles related to the jackets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.main{
+  top: 0;
+}
+/* jackets/index ================================ */
+.jackets-index{
+  top: 0;
+  width: 100%;
+  min-height: 100%;
+  background-repeat: no-repeat;
+  background-position: center 50%;
+  background-size: cover;
+  background-image: url("/posts.index.jpg");
+}
+.sinnki{
+  padding-top: 120px;
+  text-align: center;
+}
+.btn{
+  cursor: pointer;
+  padding:15px 30px ;
+  font-size: 25px;
+}
+.contain{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 100px;
+  padding-left: 120px;
+}
+.jackets-index-item {
+  word-wrap: break-word;
+  text-align: center;
+  width: 400px;
+  height: 400px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  background-color:#f0f3f5;
+}
+.jacket-top img {
+  padding-left: 35px;
+  padding-top: 5px;
+  width: 330px;
+  height: 320px;
+  object-fit: cover;
+}
+
+.jacket-top {
+  float: left;
+  width: 10%;
+}
+
+.jacket-down1 {
+  color: black;
+  padding-top: 320px;
+  width: 90%;
+  padding-left: 25px;
+  text-align: center;
+}
+.jacket-down1 a{
+  color: black;
+}
+.jacket-down2 a{
+  color: black;
+}
+.jacket-down3 a{
+  color: black;
+}
+/* jackets/new ================================ */
+.jackets-new{
+  background-repeat: no-repeat;
+  background-position: center 50%;
+  background-size: cover;
+  background-image: url("/posts.index.jpg");
+}
+.jackets-new textarea {
+  font-size: 20px;
+  padding: 10px;
+  min-height: 20px;
+  border: 1px solid rgb(216, 218, 223);
+  resize: none;
+}
+
+.jackets-new textarea::-webkit-input-placeholder {
+  font-size: 30px;
+  opacity: 0.5;
+}
+.jackets-new p{
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+/* jackets/show ================================ */
+.jackets-show{
+  width: 100%;
+  min-height: 100%;
+  background-repeat: no-repeat;
+  background-position: center 50%;
+  background-size: cover;
+  background-image: url("/posts.index.jpg");
+}
+.show_jacket-top img {
+  padding-left: 10px;
+  padding-top: 5px;
+  width: 400px;
+  height: 450px;
+  object-fit: cover;
+}
+.jackets-show form {
+  display: inline;
+}
+
+.jackets-show-item {
+  word-wrap: break-word;
+  text-align: center;
+  width: 600px;
+  height: 580px;
+  background-color:#f0f3f5;
+  box-shadow: 0 2px 6px #c1ced7;
+}
+
+.jackets-show-item p {
+  font-size: 24px;
+}
+
+
+.jacket-menus {
+  letter-spacing: 6px;
+  float: right;
+}
+
+.jacket-menus a, .jacket-menus input {
+  color: black;
+  text-decoration: underline;
+  font-size: 20px;
+  padding-top:  10px;
+}

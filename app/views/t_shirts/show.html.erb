@@ -1,0 +1,30 @@
+<div class="main t_shirts-show">
+  <div class="container">
+    <div class="t_shirts-show-item">
+    <div class="show_t_shirt-top">
+      <% if @t_shirt.image.attached? %>
+        <%= image_tag @t_shirt.image %>
+      <% end %>
+    </div>
+      <div class="show_t_shirt-down">
+      <p>ブランド：
+       <%= @t_shirt.content %>
+      </p>
+      </div>
+      <div class="show_t_shirt-down">
+      <p>色：
+       <%= @t_shirt.color %>
+      </p>
+      </div>
+      <div class="show_t_shirt-down">
+      <p>サイズ：
+       <%= @t_shirt.size %>
+      </p>
+      </div>
+    <div class="t_shirt-menus">
+      <%= link_to("編集", "/t_shirts/#{@t_shirt.id}/edit") %>
+      <%= link_to("削除", "/t_shirts/#{@t_shirt.id}/destroy", {method: "post"}) %>
+    </div>
+    </div>
+  </div>
+</div>

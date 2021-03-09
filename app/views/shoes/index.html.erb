@@ -1,0 +1,27 @@
+<div class="main shoes-index">
+  <div class="sinnki">
+      <%=link_to("/shoes/new") do %>
+    <button class="btn">追加</button>
+  <%end%>
+  </div>
+  <div class="contain">
+    <% @shoes.each do |shoe| %>
+      <div class="shoes-index-item">
+      <div class="shoe-top">
+        <% if shoe.image.attached? %>
+          <%= image_tag shoe.image %>
+        <% end %>
+      </div>
+      <div class="shoe-down1">ブランド：
+      <%= link_to(shoe.content ,"/shoes/#{shoe.id}") %>
+      </div>
+      <div class="shoe-down2">色：
+      <%= link_to(shoe.color ,"/shoes/#{shoe.id}") %>
+      </div>
+      <div class="shoe-down3">サイズ：
+      <%= link_to(shoe.size ,"/shoes/#{shoe.id}") %>
+      </div>
+      </div>
+    <% end %>
+  </div>
+</div>

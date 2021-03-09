@@ -1,0 +1,30 @@
+<div class="main shoes-show">
+  <div class="container">
+    <div class="shoes-show-item">
+    <div class="show_shoe-top">
+      <% if @shoe.image.attached? %>
+        <%= image_tag @shoe.image %>
+      <% end %>
+    </div>
+      <div class="show_shoe-down">
+      <p>ブランド：
+       <%= @shoe.content %>
+      </p>
+      </div>
+      <div class="show_shoe-down">
+      <p>色：
+       <%= @shoe.color %>
+      </p>
+      </div>
+      <div class="show_shoe-down">
+      <p>サイズ：
+       <%= @shoe.size %>
+      </p>
+      </div>
+    <div class="shoe-menus">
+      <%= link_to("編集", "/shoes/#{@shoe.id}/edit") %>
+      <%= link_to("削除", "/shoes/#{@shoe.id}/destroy", {method: "post"}) %>
+    </div>
+    </div>
+  </div>
+</div>

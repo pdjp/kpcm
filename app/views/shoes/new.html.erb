@@ -1,0 +1,25 @@
+<div class="main shoes-new">
+  <div class="container">
+    <h1 class="form-heading">追加する</h1>
+    <%= form_tag("/shoes/create",{multipart: true}) do %>
+      <div class="form">
+        <div class="form-body">
+          <% @shoe.errors.full_messages.each do |message| %>
+            <div class="form-error">
+              <%= message %>
+            </div>
+          <% end %>
+          <p>画像の変更</p>
+          <input name="image" type="file">
+          <p>ブランド</p>
+          <textarea name="content"><%= @shoe.content %></textarea>
+          <p>色</p>
+          <textarea name="color"><%= @shoe.color %></textarea>
+          <p>サイズ</p>
+          <textarea name="size"><%= @shoe.size %></textarea>
+          <input type="submit" value="追加">
+        </div>
+      </div>
+    <% end %>  
+  </div>
+</div>

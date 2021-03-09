@@ -1,0 +1,30 @@
+<div class="main pants-show">
+  <div class="container">
+    <div class="pants-show-item">
+    <div class="show_pant-top">
+      <% if @pant.image.attached? %>
+        <%= image_tag @pant.image %>
+      <% end %>
+    </div>
+      <div class="show_pant-down">
+      <p>ブランド：
+       <%= @pant.content %>
+      </p>
+      </div>
+      <div class="show_pant-down">
+      <p>色：
+       <%= @pant.color %>
+      </p>
+      </div>
+      <div class="show_pant-down">
+      <p>サイズ：
+       <%= @pant.size %>
+      </p>
+      </div>
+    <div class="pant-menus">
+      <%= link_to("編集", "/pants/#{@pant.id}/edit") %>
+      <%= link_to("削除", "/pants/#{@pant.id}/destroy", {method: "post"}) %>
+    </div>
+    </div>
+  </div>
+</div>

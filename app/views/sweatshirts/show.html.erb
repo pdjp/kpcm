@@ -1,0 +1,30 @@
+<div class="main sweatshirts-show">
+  <div class="container">
+    <div class="sweatshirts-show-item">
+    <div class="show_sweatshirt-top">
+        <% if @sweatshirt.image.attached? %>
+          <%= image_tag @sweatshirt.image %>
+        <% end %>
+      </div>
+      <div class="show_sweatshirt-down">
+      <p>ブランド：
+       <%= @sweatshirt.content %>
+      </p>
+      </div>
+      <div class="show_sweatshirt-down">
+      <p>色：
+       <%= @sweatshirt.color %>
+      </p>
+      </div>
+      <div class="show_sweatshirt-down">
+      <p>サイズ：
+       <%= @sweatshirt.size %>
+      </p>
+      </div>
+    <div class="sweatshirt-menus">
+      <%= link_to("編集", "/sweatshirts/#{@sweatshirt.id}/edit") %>
+      <%= link_to("削除", "/sweatshirts/#{@sweatshirt.id}/destroy", {method: "post"}) %>
+    </div>
+    </div>
+  </div>
+</div>

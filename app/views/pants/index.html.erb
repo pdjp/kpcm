@@ -1,0 +1,27 @@
+<div class="main pants-index">
+  <div class="sinnki">
+      <%=link_to("/pants/new") do %>
+    <button class="btn">追加</button>
+  <%end%>
+  </div>
+  <div class="contain">
+    <% @pants.each do |pant| %>
+      <div class="pants-index-item">
+      <div class="pant-top">
+      <% if pant.image.attached? %>
+        <%= image_tag pant.image %>
+      <% end %>
+      </div>
+      <div class="pant-down1">ブランド：
+      <%= link_to(pant.content ,"/pants/#{pant.id}") %>
+      </div>
+      <div class="pant-down2">色：
+      <%= link_to(pant.color ,"/pants/#{pant.id}") %>
+      </div>
+      <div class="pant-down3">サイズ：
+      <%= link_to(pant.size ,"/pants/#{pant.id}") %>
+      </div>
+      </div>
+    <% end %>
+  </div>
+</div>

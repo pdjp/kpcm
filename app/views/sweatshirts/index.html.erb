@@ -1,0 +1,27 @@
+<div class="main sweatshirts-index">
+  <div class="sinnki">
+      <%=link_to("/sweatshirts/new") do %>
+    <button class="btn">追加</button>
+  <%end%>
+  </div>
+  <div class="contain">
+    <% @sweatshirts.each do |sweatshirt| %>
+      <div class="sweatshirts-index-item">
+      <div class="sweatshirt-top">
+        <% if sweatshirt.image.attached? %>
+          <%= image_tag sweatshirt.image %>
+        <% end %>
+      </div>
+      <div class="sweatshirt-down1">ブランド：
+      <%= link_to(sweatshirt.content ,"/sweatshirts/#{sweatshirt.id}") %>
+      </div>
+      <div class="sweatshirt-down2">色：
+      <%= link_to(sweatshirt.color ,"/sweatshirts/#{sweatshirt.id}") %>
+      </div>
+      <div class="sweatshirt-down3">サイズ：
+      <%= link_to(sweatshirt.size ,"/sweatshirts/#{sweatshirt.id}") %>
+      </div>
+      </div>
+    <% end %>
+  </div>
+</div>

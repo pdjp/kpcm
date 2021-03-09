@@ -1,0 +1,27 @@
+<div class="main jackets-index">
+  <div class="sinnki">
+      <%=link_to("/jackets/new") do %>
+    <button class="btn">追加</button>
+  <%end%>
+  </div>
+  <div class="contain">
+    <% @jackets.each do |jacket| %>
+      <div class="jackets-index-item">
+      <div class="jacket-top">
+      <% if jacket.image.attached? %>
+        <%= image_tag jacket.image %>
+      <% end %>
+      </div>
+      <div class="jacket-down1">ブランド：
+      <%= link_to(jacket.content ,"/jackets/#{jacket.id}") %>
+      </div>
+      <div class="jacket-down2">色：
+      <%= link_to(jacket.color ,"/jackets/#{jacket.id}") %>
+      </div>
+      <div class="jacket-down3">サイズ：
+      <%= link_to(jacket.size ,"/jackets/#{jacket.id}") %>
+      </div>
+      </div>
+    <% end %>
+  </div>
+</div>
